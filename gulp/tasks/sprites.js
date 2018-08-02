@@ -23,11 +23,11 @@ gulp.task('beginClean', function() {
 gulp.task('createSprite', ['beginClean'], function() {
   return gulp.src('./app/assets/images/icons/**/*.svg')
     .pipe(svgSprite(config))
-    .pipe(gulp.dest('./app/temp/sprite'));
+    .pipe(gulp.dest('./app/temp/sprite/'));
 });
 
 gulp.task('copySpriteGraphic', ['createSprite'], function() {
-  return gulp.src('./app/temp/sprite/css/**/*svg')
+  return gulp.src('./app/temp/sprite/css/**/*.svg')
     .pipe(gulp.dest('./app/assets/images/sprites'));
 });
 
